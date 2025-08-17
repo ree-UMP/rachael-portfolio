@@ -1,0 +1,55 @@
+.home-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+  text-align: center;
+  background: linear-gradient(135deg, #e6ccff, #d1a6ff, #ff99cc);
+  color: #2c003e;
+  padding: 20px;
+}
+
+.hero-title {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #3b0066;
+}
+
+.highlight {
+  color: #ff4db8; /* pink highlight */
+}
+
+.hero-subtitle {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  color: #660066;
+}
+
+.hero-text {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+  color: #4d004d;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 12px 28px;
+  background: linear-gradient(90deg, #9933ff, #ff4db8);
+  color: #fff;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.cta-button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #ff4db8, #9933ff);
+}

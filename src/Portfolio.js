@@ -1,111 +1,81 @@
-// Portfolio.js
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import "./Portfolio.css";
 
 const projects = [
   {
-    id: 1,
-    title: "Personal Website",
-    description: "A sleek, responsive portfolio built with React.",
-    link: "https://github.com/ree-UMP/personal-website",
+    title: "WiFly App",
+    description: "A software that allows secure remote Wi-Fi connections from anywhere in the world.",
+    image: "https://picsum.photos/500/300?random=4",
+    link: "#"
   },
   {
-    id: 2,
-    title: "PRoVault Software",
-    description: "an app that verifies certifications in schooland creates and updates one's proffessionalism and matches them with respective jobs and vacancies.",
-    link: "https://github.com/ree-UMP/\PRoVault-app",
+    title: "ProVault",
+    description: "An app that updates your certifications with the help of your school, building a professional image and connecting you to jobs that match your CV.",
+    image: "https://picsum.photos/500/300?random=5",
+    link: "#"
   },
   {
-    id: 3,
-    title: "WiFly Software",
-    description: "App that allows remote Wifi connection.",
-    link: "https://github.com/ree-UMP/WiFly-app",
-  },
+    title: "My Portfolio Project",
+    description: "A personal portfolio website showcasing my skills, projects, and professional journey.",
+    image: "https://picsum.photos/500/300?random=6",
+    link: "#"
+  }
 ];
 
 export default function Portfolio() {
-  return (
-    <div
-      style={{
-        maxWidth: "900px",
-        margin: "4rem auto",
-        padding: "0 1rem",
-        fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
-        color: "#222",
-        textAlign: "center",
-      }}
-    >
-      <h1
-        style={{
-          fontSize: "3.5rem",
-          marginBottom: "3rem",
-          fontWeight: "800",
-          color: "#5c4dff",
-          letterSpacing: "0.1em",
-          textTransform: "uppercase",
-          textShadow: "2px 2px 8px rgba(92,77,255,0.5)",
-        }}
-      >
-        💼 My Projects
-      </h1>
+  const refs = useRef([]);
 
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-          gap: "2.5rem",
-        }}
-      >
-        {projects.map(({ id, title, description, link }) => (
-          <a
-            key={id}
-            href={link}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              background: "linear-gradient(145deg, #f0f0ff, #dcdcff)",
-              borderRadius: "18px",
-              padding: "2rem",
-              boxShadow: "8px 8px 15px #b8b8d1, -8px -8px 15px #ffffff",
-              color: "#333",
-              textDecoration: "none",
-              transition: "transform 0.3s ease, box-shadow 0.3s ease",
-              cursor: "pointer",
-              userSelect: "none",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "translateY(-10px)";
-              e.currentTarget.style.boxShadow =
-                "12px 12px 20px #a0a0c0, -12px -12px 20px #ffffff";
-              e.currentTarget.style.color = "#5c4dff";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.boxShadow =
-                "8px 8px 15px #b8b8d1, -8px -8px 15px #ffffff";
-              e.currentTarget.style.color = "#333";
-            }}
-          >
-            <h2
-              style={{
-                fontSize: "1.8rem",
-                marginBottom: "1rem",
-                fontWeight: "700",
-              }}
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    refs.current.forEach(ref => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div className="portfolio-wrapper">
+      <header className="portfolio-hero">
+        <h1>Rachael Ngemu</h1>
+        <p className="typewriter">
+          Software Developer | Designer | Web Developer
+        </p>
+      </header>
+
+      <section className="portfolio-section">
+        <h2>My Work</h2>
+        <div className="portfolio-grid">
+          {projects.map((project, index) => (
+            <div
+              className="portfolio-card fade-in"
+              key={index}
+              ref={(el) => (refs.current[index] = el)}
             >
-              {title}
-            </h2>
-            <p
-              style={{
-                fontSize: "1.2rem",
-                lineHeight: "1.5",
-                fontWeight: "500",
-              }}
-            >
-              {description}
-            </p>
-          </a>
-        ))}
-      </div>
+              <div className="portfolio-image">
+                <img src={project.image} alt={project.title} />
+              </div>
+              <div className="portfolio-details">
+                <h3>{project.title}</h3>
+                <p>{project.description}</p>
+                <a href={project.link} target="_blank" rel="noopener noreferrer">
+                  View Project →
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }

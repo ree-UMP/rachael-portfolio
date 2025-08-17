@@ -11,26 +11,28 @@ export default function About() {
         alignItems: "center",
         minHeight: "85vh",
         padding: "2rem",
-        fontFamily: "Arial, sans-serif",
+        fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
         fontSize: "1.5rem",
         textAlign: "center",
+        background: "linear-gradient(135deg, #f3e8ff, #fce7f3)",
+        color: "#2d1b69",
       }}
     >
-      {/* Profile circle on the left inside container */}
+      {/* Profile Picture */}
       <div
         style={{
-          width: "180px",
-          height: "180px",
+          width: "200px",
+          height: "200px",
           borderRadius: "50%",
           overflow: "hidden",
-          border: "4px solid #4f46e5",
+          border: "4px solid #8b5cf6",
           marginBottom: "1rem",
-          alignSelf: "center",
+          boxShadow: "0 6px 15px rgba(139, 92, 246, 0.4)",
           animation: "popIn 1s ease forwards",
         }}
       >
         <img
-          src="https://via.placeholder.com/180"
+          src="/profile.jpg" // <- Replace with your real photo path
           alt="Rachael"
           style={{
             width: "100%",
@@ -41,11 +43,11 @@ export default function About() {
         />
       </div>
 
-      <h1 style={{ fontSize: "4rem", fontWeight: "bold", marginBottom: "0.5rem" }}>
+      <h1 style={{ fontSize: "3.5rem", fontWeight: "bold", marginBottom: "0.5rem" }}>
         👩‍💻 About Me — Rachael
       </h1>
 
-      <h2 style={{ fontSize: "2.2rem", color: "#4f46e5", marginBottom: "1rem" }}>
+      <h2 style={{ fontSize: "2rem", color: "#db2777", marginBottom: "1rem" }}>
         Software Developer
       </h2>
 
@@ -53,12 +55,13 @@ export default function About() {
         Hi there! I’m <strong>Rachael</strong>, a passionate software developer{" "}
         <span className="emoji">💻</span> who loves turning ideas into{" "}
         <span className="emoji">⚙️</span> functional and beautiful applications.
+        I believe in clean code, great design, and solutions that empower people.
       </p>
 
       {/* Skills Section */}
-      <div style={{ marginTop: "2rem", color: "#e07b39" }}>
-        <h3 style={{ fontSize: "2rem", marginBottom: "1rem" }}>Skills & Tools 🔧</h3>
-        <ul style={{ listStyle: "none", padding: 0, fontSize: "1.3rem" }}>
+      <div style={{ marginTop: "2rem", color: "#7c3aed" }}>
+        <h3 style={{ fontSize: "1.8rem", marginBottom: "1rem" }}>Skills & Tools 🔧</h3>
+        <ul style={{ listStyle: "none", padding: 0, fontSize: "1.2rem" }}>
           <li>⚡ JavaScript / React</li>
           <li>🎨 UI/UX Design</li>
           <li>🛠 Backend Development</li>
@@ -66,18 +69,19 @@ export default function About() {
         </ul>
       </div>
 
-      {/* Contact Links */}
+      {/* Contact Button */}
       <div style={{ marginTop: "2rem" }}>
         <a
           href="mailto:your-email@example.com"
           style={{
             textDecoration: "none",
             color: "#fff",
-            background: "#4f46e5",
+            background: "linear-gradient(90deg, #8b5cf6, #ec4899)",
             padding: "0.7rem 1.5rem",
             borderRadius: "8px",
             fontWeight: "bold",
             transition: "0.3s",
+            boxShadow: "0 4px 12px rgba(236, 72, 153, 0.4)",
           }}
         >
           📩 Contact Me
