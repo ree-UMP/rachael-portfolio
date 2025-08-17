@@ -1,6 +1,7 @@
 // src/Home.js
 import React from "react";
 import Typewriter from "typewriter-effect";
+import { Link } from "react-router-dom";   // ✅ import Link
 import "./Home.css";
 
 function Home() {
@@ -27,9 +28,11 @@ function Home() {
         <p className="hero-text">
           I craft modern, creative, and responsive web experiences.
         </p>
-        <a href="/contact" className="cta-button">
-          Let’s Work Together
-        </a>
+
+        {/* ✅ Changed from <a> to <Link> */}
+        <Link to="/contact" className="cta-button">
+          Let's Work Together
+        </Link>
       </div>
     </div>
   );
