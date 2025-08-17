@@ -6,19 +6,19 @@ const projects = [
     title: "WiFly App",
     description: "A software that allows secure remote Wi-Fi connections from anywhere in the world.",
     image: "https://picsum.photos/500/300?random=4",
-    link: "#"
+    link: "https://github.com/ree-UMP/rachael-portfolio/wifly-app"
   },
   {
     title: "ProVault",
     description: "An app that updates your certifications with the help of your school, building a professional image and connecting you to jobs that match your CV.",
     image: "https://picsum.photos/500/300?random=5",
-    link: "#"
+    link: "https://github.com/ree-UMP/rachael-portfolio/provault"
   },
   {
     title: "My Portfolio Project",
     description: "A personal portfolio website showcasing my skills, projects, and professional journey.",
     image: "https://picsum.photos/500/300?random=6",
-    link: "#"
+    link: "https://github.com/ree-UMP/rachael-portfolio/portfolio"
   }
 ];
 
