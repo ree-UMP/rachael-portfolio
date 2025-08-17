@@ -32,15 +32,16 @@ export default function About() {
         }}
       >
         <img
-          src="/profile.jpg" // <- Replace with your real photo path
-          alt="Rachael"
-          style={{
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-            display: "block",
-          }}
-        />
+  src={process.env.PUBLIC_URL + "/profile.jpg"} // <-- matches your file in public
+  alt="Rachael"
+  style={{
+    width: "100%",
+    height: "100%",
+    objectFit: "cover",
+    display: "block",
+  }}
+/>
+
       </div>
 
       <h1 style={{ fontSize: "3.5rem", fontWeight: "bold", marginBottom: "0.5rem" }}>
